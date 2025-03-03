@@ -17,7 +17,7 @@ const TeacherAssignMarks = ({ teacherId }) => {
     const fetchTeacherData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/teacher/get/${teacherId}`,
+          `/${teacherId}`,
           { withCredentials: true }
         );
 
@@ -72,7 +72,7 @@ const TeacherAssignMarks = ({ teacherId }) => {
   
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/teacher/get-subjects`,
+          ``,
           {
             params: {
               teacherId,
@@ -103,7 +103,7 @@ const TeacherAssignMarks = ({ teacherId }) => {
       const fetchStudents = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/api/teacher/students?branchId=${selectedBranch}&year=${selectedYear}`,
+            `${selectedBranch}&year=${selectedYear}`,
             { withCredentials: true }
           );
           setStudents(response.data);
@@ -144,7 +144,7 @@ const TeacherAssignMarks = ({ teacherId }) => {
         marks: parseInt(marks[studentId], 10),
       }));
 
-      await axios.post("http://localhost:5000/api/teacher/assign-marks", markEntries, {
+      await axios.post("", markEntries, {
         withCredentials: true,
       });
 

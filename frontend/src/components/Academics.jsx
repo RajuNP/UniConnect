@@ -9,7 +9,7 @@ const Academics = ({ studentId }) => {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/student/subjects/${studentId}`, { withCredentials: true });
+        const response = await axios.get(`/${studentId}`, { withCredentials: true });
         setSubjects(response.data.subjects);
       } catch (error) {
         console.error("Error fetching subjects:", error);

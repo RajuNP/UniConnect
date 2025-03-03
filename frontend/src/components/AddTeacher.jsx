@@ -20,7 +20,7 @@ const AddTeacher = () => {
   useEffect(() => {
     const fetchBranches = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/admin/branches", {
+        const response = await axios.get("", {
           withCredentials: true,
         });
 
@@ -103,7 +103,7 @@ const AddTeacher = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/admin/add-teacher", formData);
+      await axios.post("", formData);
       setMessage("Teacher added successfully!");
       setFormData({ name: "", email: "", password: "", branches: [] });
     } catch (error) {

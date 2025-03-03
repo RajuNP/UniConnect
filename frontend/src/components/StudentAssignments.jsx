@@ -8,7 +8,7 @@ const StudentAssignment = ({ studentId }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/student/marks/${studentId}`, { withCredentials: true })
+      .get(`/${studentId}`, { withCredentials: true })
       .then((response) => {
         setMarks(response.data);
         setLoading(false);

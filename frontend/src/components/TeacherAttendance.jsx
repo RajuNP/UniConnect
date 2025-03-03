@@ -17,7 +17,7 @@ const TeacherAttendance = ({ teacherId }) => {
     const fetchTeacherData = async () => {
       try {
         console.log("Fetching teacher data for ID:", teacherId);
-        const response = await axios.get(`http://localhost:5000/api/teacher/get/${teacherId}`);
+        const response = await axios.get(`/${teacherId}`);
         
         const allBranches = response.data.branches;
 
@@ -67,7 +67,7 @@ const TeacherAttendance = ({ teacherId }) => {
         try {
           console.log("Fetching students for Branch:", selectedBranch, "Year:", selectedYear);
           const response = await axios.get(
-            `http://localhost:5000/api/teacher/students?branchId=${selectedBranch}&year=${selectedYear}`
+            `${selectedBranch}&year=${selectedYear}`
           );
           setStudents(response.data);
         } catch (error) {
@@ -87,7 +87,7 @@ const TeacherAttendance = ({ teacherId }) => {
       return;
     }
     try {
-      await axios.post("http://localhost:5000/api/teacher/update-attendance", {
+      await axios.post("", {
         studentId: selectedStudent,
         date: new Date(),
         status: attendanceStatus,

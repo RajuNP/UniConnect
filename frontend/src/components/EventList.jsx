@@ -9,7 +9,7 @@ const EventList = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/admin/events", {
+        const response = await axios.get("", {
           withCredentials: true,
         });
         console.log("Fetched Events:", response.data);

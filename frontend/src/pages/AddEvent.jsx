@@ -16,7 +16,7 @@ const AddEvent = () => {
   useEffect(() => {
     const fetchBranches = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/admin/branches", {
+        const response = await axios.get("", {
           withCredentials: true,
         });
 
@@ -39,7 +39,7 @@ const AddEvent = () => {
     e.preventDefault();
     try {
       console.log(formData);
-      const response = await axios.post("http://localhost:5000/api/admin/add-event", formData, {
+      const response = await axios.post("", formData, {
         withCredentials: true,
       });
 

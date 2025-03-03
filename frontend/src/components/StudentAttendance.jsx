@@ -9,7 +9,7 @@ const StudentAttendance = ({studentId}) => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/student/attendance/${studentId}?date=${selectedDate}`
+        `attendance/${studentId}?date=${selectedDate}`
       );
       const data = await response.json();
       setAttendanceStatus(data.status);
